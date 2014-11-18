@@ -4,7 +4,7 @@ urjtag-st7xxx
 UrJtag repository clone patched specifically with HUDI support. HUDI is a specific Hitachi debug protocol used in 
 the ST7xxx SOCs which will allow to use peek/poke commands within urJtag.
 
-Primary purpose of this repository is to use it on the Telenet ADB-DC2000 digicorder for box and rsa key extraction.
+Primary purpose of this repository is to use it on the Telenet ADB-DC2000 digicorder for nagravision key extraction.
 
 To compile use following commands
 
@@ -20,7 +20,6 @@ To compile use following commands
     make V=1
 
 3. If an error occurs when running configure then try to add the following
-
     export LIBS=/usr/lib/x86_64-linux-gnu/libelf.so
 
 4. start urjtag
@@ -28,7 +27,7 @@ To compile use following commands
     cable arduiggler
     detect
 
-18-10-2014: Added arduiggler patch. One can use an arduino to jtag a hudi target now.
+18-10-2014: Added arduiggler patch. One can use an arduino to jtag a hudi target now. Patch taken from latest commit on https://gitorious.org/urjtag-arduiggler/urjtag-arduiggler/
 
     
   
