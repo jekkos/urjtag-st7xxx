@@ -10,19 +10,20 @@ To compile use following commands
 
 1. First install libftd2xxx (download from http://www.ftdichip.com/Drivers/D2XX.htm)
  
-    cd libftd2xx1.0.4/
-    ln -s build/x86_64/libftd2xx.so.1.0.4 libftd2xx.so
+    sudo cp ftd2xxx.h /usr/include/
+    sudo ln -s /usr/local/include/ftd2xx.h /usr/include/ftd2xx.h
+    sudo cp libftd2xx.so.1.1.12 /usr/local/lib/
+    ln -s /usr/local/lib/libftd2xx.so.1.1.12 /usr/lib/libftd2xx.so
 
 2. Compile urjtag
+
     sudo apt-get install libdwb1 libdw-dev elfutils libelf-dev libftdi-dev
     autoreconf -vis
-    export LDFLAGS=-lelf && ./configure --enable-jedec-exp --enable-cable --disable-nls --with-ftd2xx
+    export LDFLAGS="-L/usr/lib/x86_64-linux-gnu/libelf.so -lelf" && ./configure --enable-jedec-exp --disable-nls --with-ftd2xx
     make V=1
 
-3. If an error occurs when running configure then try to add the following
-    export LIBS=/usr/lib/x86_64-linux-gnu/libelf.so
+3. start urjtag
 
-4. start urjtag
     src/apps/jtag/jtag
     cable arduiggler
     detect

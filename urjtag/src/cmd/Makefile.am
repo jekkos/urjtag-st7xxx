@@ -65,6 +65,7 @@ always_enabled_cmd_files = \
 	cmd_cmd.c \
 	cmd_usleep.c \
 	cmd_bfin.c \
+	cmd_tapmux.c \
 	cmd_pld.c
 
 libcmd_la_SOURCES = \
